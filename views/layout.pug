@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    title Eventbrite
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.rtl.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.mobile.all.min.css"/>
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+
+
+
+
+    //- Notify 라이브러리 import: http://bootstrap-notify.remabledesigns.com/ 
+    script(src='/javascripts/bootstrap-notify.js')
+
+    //- this application
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/application.js')
+
+    //- socket io
+    script(src='/socket.io/socket.io.js') 
+  body
+    block top-nav
+      include ./includes/topnav
+    block hero-unit
+    block jmb
+    if flashMessages
+      each texts, type in flashMessages
+        .container
+          .alert.alert-dismissible.fade.show(class=`alert-${type}`)
+            each msg in texts
+              | #{msg} 
+            button.close(type='button', data-dismiss='alert', aria-label='close')
+              span(aria-hidden='true') &times;
+    block content
+    block card
+
+    block footer
+      include ./includes/footer
+
+    script.
+
+      // WebSocket을 만들고 접속
+      var socket = io();
+
+      socket.on('welcome', function() {
+        // welcome 메시지를 받으면 join을 보낸다.
+        console.log('received welcome');
+        socket.emit('join');
+      });
+
+      socket.on('answered', function(data) {
+        // answered를 받으면 링크를 notifier로 출력한다.
+        var title = $('<div></div>').text(data.question.title).html();
+        $.notify({
+          icon: 'fa fa-bell',
+          title: 'You hace a new answer.',
+          url: data.url,
+          message: title
+        });
+      });
+
+

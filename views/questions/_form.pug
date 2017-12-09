@@ -1,0 +1,220 @@
+<h3>1. Event Details</h3>
+.form-group
+  label(for="title") EVENT TITLE
+  input.form-control(type="text", name="title", placeholder="Give it a short distinct name", value=question.title)
+.form-group
+  label(for="question") LOCATION
+  input.form-control(type="text", name="content", placeholder="Search for a venue or address.", value=question.content)
+
+
+.form-group
+  label START
+script.
+  $( function() {
+    $( "#datepicker1" ).datepicker();
+  } );
+<input id="datepicker1">
+
+<input id="timepicker1" />
+script.
+  $("#timepicker1").kendoTimePicker({
+    animation: false
+  });
+
+.form-group
+  label END
+script.
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+<input id="datepicker2">
+
+<input id="timepicker2" />
+script.
+  $("#timepicker2").kendoTimePicker({
+    animation: false
+  });
+
+
+.form-group
+  label Image
+script(src='/ckeditor/ckeditor.js')
+<textarea id="editor1"></textarea>
+//- script.
+//-   CKEDITOR.replace( 'editor1');  
+  
+script.
+          CKEDITOR.replace( 'editor1', {
+            filebrowserUploadUrl: '/upload',
+ });
+
+.form-group
+    label EVENT DESCRIPTION
+<script src="/ckeditor/ckeditor.js"></script>
+<textarea id="editor2"></textarea>
+script.
+  CKEDITOR.replace( 'editor2');
+
+
+
+<h3>2. Create Tickets</h3>
+
+<form-group>
+  <label>LISTING PRIVACY</label>
+  <div class="row">
+    <div class="col-sm-3">
+      <p></p>
+      <p><button class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> FREE TICKET</button></p>
+        <div class="collapse" id="collapseExample">
+          <div class="well">
+          <label for="exampleInputName1">Ticket name</label>
+          <input type="text" class="form-control" id="exampleInputName1" placeholder="Jane Doe">
+          <label for="exampleInputName2">Price</label>
+          <input class="form-control" id="disabledInput" type="text" placeholder="Free" disabled>
+          </div>
+        </div>
+      </div> 
+    <div class="col-sm-3">
+      <p></p>
+      <p><button class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"> PAID TICKET</button></p>
+        <div class="collapse" id="collapseExample1">
+          <div class="well">
+          <label for="exampleInputName1">Ticket name</label>
+          <input type="text" class="form-control" id="exampleInputName1" placeholder="Cinderella">
+          <label for="exampleInputName2">Price</label>
+          <input type="text" class="form-control" id="exampleInputName2" placeholder="$   15">
+          </div>
+        </div>
+      </div>
+    <div class="col-sm-3">
+      <p></p>
+      <p><button class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3"> DONATION</button></p>
+        <div class="collapse" id="collapseExample3">
+          <div class="well">
+          <label for="exampleInputName1">Ticket name</label>
+          <input type="text" class="form-control" id="exampleInputName1" placeholder="Snow White">
+          <label for="exampleInputName3">Price</label>
+          <input type="text" class="form-control" id="exampleInputName3" placeholder="$   19">
+          </div>
+        </div>
+    </div>
+  </div>
+//- .form-group
+//-   .row
+//-       .col-sm-3
+//-         a.btn.btn-sm.btn-primary(href='https://www.eventbrite.com/create', role='button') FREE TICKET 
+//-       .col-sm-3
+//-         a.btn.btn-sm.btn-primary(href='https://www.eventbrite.com/create', role='button') PAID TICKET
+//-       .col-sm-3
+//-         a.btn.btn-sm.btn-primary(href='https://www.eventbrite.com/create', role='button') DONATION
+
+
+
+<h3>3. Additional Settings</h3>
+.form-group
+  label LISTING PRIVACY
+  <div class="radio">
+  <label> 
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Public page: Discoverable by anyone on Eventbrite, our distribution partners, and search engines.
+    
+    </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Private page : Accessible only by people you specify.
+  </label>
+</div>
+
+
+.form-group
+    label EVENT TYPE
+    <div class="row">
+     <div class="col-xs-6">
+      <select class="form-control">
+      <option>Select the type of event</option>
+      <option>Appearance or Signing</option>
+      <option>Attraction</option>
+      <option>Camp, Trip, or Retreat</option>
+      <option>Class, Training, or Workshop</option>
+      <option>Concert or Performance</option>
+      <option>Conference</option>
+      <option>Convention</option>
+      <option>Dinner or Gala</option>
+      <option>Festival or Fair</option>
+      <option>Game or Competition</option>
+      <option>Meeting or Networking Event</option>
+      <option>Other</option>
+      <option>Party or Social Gathering</option>
+      <option>Race or Endurance Event</option>
+      <option>Rally</option>
+      <option>Screening</option>
+      <option>Seminar or Talk</option>
+      <option>Tour</option>
+      <option>Tournament</option>
+      <option>Tradeshow, Consumer Show, or Expo</option>
+      </select>
+    </div>
+</div>
+
+.form-group
+    label EVENT TOPIC
+    <div class="row">
+     <div class="col-xs-4">
+      <select class="form-control">
+      <option>Select a topic</option>
+      <option>Auto, Boat & Air</option>
+      <option>Business & Professional</option>
+      <option>Charity & Causes</option>
+      <option>Community & Culture</option>
+      <option>Family & Education</option>
+      <option>Fashion & Beauty</option>
+      <option>Film, Media & Entertainment</option>
+      <option>Food & Drink</option>
+      <option>Government & Politics</option>
+      <option>Health & Wellness</option>
+      <option>Hobbies & Special Interest</option>
+      <option>Home & Lifestyle</option>
+      <option>Music</option>
+      <option>Other</option>
+      <option>Performing & Visual Arts</option>
+      <option>Religion & Spirituality</option>
+      <option>School Activities</option>
+      <option>Science & Technology</option>
+      <option>Seasonal & Holiday</option>
+      <option>Sports & Fitness</option>
+      <option>Travel & Outdoor</option>
+      </select>
+    </div>
+</div>
+
+.form-group
+  label REMAINING TICKETS
+  <div class="checkbox">
+  <label>
+    <input type="checkbox" value=""> Show the number of remaining tickets on your event listing
+  </label>
+  </div>
+
+//- <form id="writeAction" action="/boards?mode=add" method="post" enctype="multipart/form-data">
+//-     <textarea class="textContents" id="addContents" name="addContents" rows="20" cols="80"></textarea>
+//-     <input type = "file" class="inputFile" id = "UploadFile" name = "UploadFile" multiple>
+//- </form>
+
+//- script(src='/ckeditor/ckeditor.js')
+//- <textarea id="editor1"></textarea>
+//- //- script.
+//- //-   CKEDITOR.replace( 'editor1');  
+  
+//- script.
+//-           CKEDITOR.replace( 'editor1', {
+//-             filebrowserUploadUrl: '/upload',
+//-  });
+
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
+
+
+
+
+

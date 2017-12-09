@@ -1,0 +1,29 @@
+.header.clearfix
+  nav.navbar.navbar-expand-md.navbar-light.bg-white
+    
+      a.navbar-brand(href="/")
+       b Eventbrite
+                
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarsExampleDefault", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+        span.navbar-toggler-i
+
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+
+          li.nav-item
+            a.nav-link(href="/questions") CREATE EVENTS
+          
+          li.nav-item
+            a.nav-link(href="/users") Users
+          if (!currentUser)
+            li.nav-item
+              a.nav-link(href='/signin') SIGN IN
+            li.nav-item
+              a.nav-link(href='/users/new') Signup
+          else
+            li.nav-item
+              a.nav-link(href=`/users/${currentUser._id}`) My Profile
+            li.nav-item
+              a.nav-link(href='/signout') Signout
+
+              

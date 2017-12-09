@@ -1,0 +1,133 @@
+extends layout
+
+block hero-unit
+  #carouselFade.carousel.slide.carousel-fade(data-ride='carousel', data-interval='2000')
+    .carousel-inner(role='listbox')
+        .carousel-item.active
+          img.d-block.w-100(src='https://cdn.evbstatic.com/s3-build/perm_001/35d88f/django/images/home/banners/homepage_hero_banner_1.jpg', height='410px', alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='https://cdn.evbstatic.com/s3-build/perm_001/aa36c3/django/images/home/banners/homepage_hero_banner_2.jpg', height='410px', alt='Second slide')
+        .carousel-item
+          img.d-block.w-100(src='https://cdn.evbstatic.com/s3-build/perm_001/6812b9/django/images/home/banners/homepage_hero_banner_3.jpg', height='410px', alt='Third slide')
+        .carousel-item
+          img.d-block.w-100(src='https://cdn.evbstatic.com/s3-build/perm_001/99ca9f/django/images/home/banners/homepage_hero_banner_4.jpg', height='410px', alt='Fourth slide')
+
+block jmb
+  .jumbotron.jumbotron-fluid
+    .container
+      h1.display Find your next experience
+      p.lead
+        form.form-inline
+          .btn-group(role='group', aria-label='Button group with nested dropdown')
+            input.form-control.mr-sm-2(type='text', placeholder='Search events or categories', aria-label='Search')
+            input.form-control.mr-sm-2(type='text', placeholder='City or location', value='Seoul, Republic of Korea', aria-label='Search')
+            .dropdown
+              button.btn2.btn-light.dropdown-toggle(type='button', data-toggle='dropdown') All Dates
+              .dropdown-menu
+                a.dropdown-item(href='#') All Dates
+                a.dropdown-item(href='#') Today
+                a.dropdown-item(href='#') Tomorrow
+                a.dropdown-item(href='#') This Week
+                a.dropdown-item(href='#') This Weekend
+                a.dropdown-item(href='#') Next Week
+                a.dropdown-item(href='#') Next Month
+                
+            button.btn1.btn-light(type='submit') Search
+            .dropdown-menu
+              a.dropdown-item(href='#') Blog
+              a.dropdown-item(href='#') Resources
+              a.dropdown-item(href='#') Fees
+              a.dropdown-item(href='#') How it works
+              a.dropdown-item(href='#') Features
+
+block card
+  .card-columns
+    // card1
+    .card
+      img.card-img-top(src='https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F36099940%2F188355823486%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C0%2C2160%2C1080&s=af78eb586f50014c52a880920004305c', alt='Card image cap')
+      .card-body
+        time.card-date SAT. OCT 21 7:00 PM
+        h4.card-title Grease, School Edition - October 21, 2017
+        .card-venue
+          | Seoul Foreign School | 서울외국인학교, Yeonhui-ro 22-gil
+        p.card-text  
+        .card-tags
+          a.event-category(href='https://www.eventbrite.com/d/republic-of--yeonhui-ro-22-gil/arts--events/') #Arts
+          a.event-category(href='https://www.eventbrite.com//d/republic-of--yeonhui-ro-22-gil/performances/') #Performance
+    // card2
+    .card
+      img.card-img-top(src='https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F36062382%2F225177641485%2F1%2Foriginal.jpg?h=140&w=280&rect=0%2C125%2C2000%2C1000&s=1200f9478abf22c9155bdfb4141b8205', alt='Card image cap')
+      .card-body
+        time.card-date SAT. NOV 4 10:00 AM
+        h4.card-title
+          | MTTM Ignite Conference
+        .card-venue
+          | Culpepper Christian Servicemen Center, Yongsan-gu, Seoul
+        p.card-text  
+        .card-tags
+          a.event-category(href='https://www.eventbrite.com/d/republic-of--yeonhui-ro-22-gil/arts--events/') #Spirtuality
+          a.event-category(href='https://www.eventbrite.com//d/republic-of--yeonhui-ro-22-gil/performances/') #Conference
+    // card3
+    .card
+      img.card-img-top(src='https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F34580357%2F205327155999%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C3%2C200%2C100&s=b9223afd4e7abf714e63e8aea6d00a93')
+      .card-body
+        time.card-date THU. NOV 9 9:00 AM
+        h4.card-title
+          | GMP and Regulatory Expectations for Early IND Products (ntz) A
+        .card-venue
+          | Seoul, Seoul
+        p.card-text  
+        .card-tags
+          a.event-category(href='https://www.eventbrite.com/d/republic-of--yeonhui-ro-22-gil/arts--events/') #Business
+          a.event-category(href='https://www.eventbrite.com//d/republic-of--yeonhui-ro-22-gil/performances/') #Seminar
+    // card4
+    .card
+      img.card-img-top(src='https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F36346708%2F59307985005%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C33%2C266%2C133&s=4649e5f492199c0bb8e436ae15cd99bd', alt='Card image cap')
+      .card-body
+        time.card-date MON. OCT 30 11:30 AM
+        h4.card-title
+          | Seoul Big Data Training | Hadoop Training - Omni212
+        .card-venue
+          | Instructor led Online | Video Conference, Seoul
+        p.card-text  
+        .card-tags
+          a.event-category(href='https://www.eventbrite.com/d/republic-of--yeonhui-ro-22-gil/arts--events/') #ScienceTech
+          a.event-category(href='https://www.eventbrite.com//d/republic-of--yeonhui-ro-22-gil/performances/') #Class
+    // card5
+    .card
+      img.card-img-top(src='https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F35129999%2F139848101790%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C4%2C484%2C242&s=88cc975feb3f29f0fdd322d1f9832a74', alt='Card image cap')
+      .card-body
+        time.card-date THU. NOV 9 9:00 AM
+        h4.card-title
+          | GMP and Regulatory Expectations for Early IND Products 2017
+        .card-venue
+          | Seoul, Seoul
+        p.card-text  
+        .card-tags
+          a.event-category(href='https://www.eventbrite.com/d/republic-of--yeonhui-ro-22-gil/arts--events/') #Health
+          a.event-category(href='https://www.eventbrite.com//d/republic-of--yeonhui-ro-22-gil/performances/') #Conference
+    // card6
+    .card
+      img.card-img-top(src='https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F36353019%2F227861081994%2F1%2Foriginal.jpg?h=140&w=280&rect=0%2C0%2C1800%2C900&s=dcf2e60ed1da22227c6e675b82772cdb', alt='Card image cap')
+      .card-body
+        time.card-date FRI. OCT 20 4:00 PM
+        h4.card-title
+          | StartupToken Asia Tour 2017 - Seoul Edition
+        .card-venue
+          | MARU180, Gangnam-gu
+        p.card-text  
+        .card-tags
+          a.event-category(href='https://www.eventbrite.com/d/republic-of--yeonhui-ro-22-gil/arts--events/') #ScienceTech
+          a.event-category(href='https://www.eventbrite.com//d/republic-of--yeonhui-ro-22-gil/performances/') #Seminar
+//- block name
+//-  
+
+
+block content
+ h2
+  | Events for you in 
+  input.form-control2.mr-sm-2(type='text', placeholder='City or location', value='Seoul, Republic of Korea', autocorrect="off", autocomplete="off", aria-haspopup="true", autocapitalize="off", spellcheck="false", aria-label='Search')
+
+
+
+
